@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package spotifei.visao;
+import spotifei.dao.UsuarioDAO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,28 +30,28 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        Nickusuario = new javax.swing.JTextField();
+        txtNomeUsuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        NomeUsuario = new javax.swing.JTextField();
+        txtNomeCompleto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         BtnCriarContaUsuario = new javax.swing.JButton();
-        SenhaUsuario = new javax.swing.JPasswordField();
+        txtSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Nome do usuário");
 
-        Nickusuario.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NickusuarioActionPerformed(evt);
+                txtNomeUsuarioActionPerformed(evt);
             }
         });
 
         jLabel2.setText("Nome completo:");
 
-        NomeUsuario.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeCompleto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeUsuarioActionPerformed(evt);
+                txtNomeCompletoActionPerformed(evt);
             }
         });
 
@@ -62,7 +64,11 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
             }
         });
 
-        SenhaUsuario.setText("jPasswordField1");
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -76,15 +82,15 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(SenhaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nickusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(136, 136, 136))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(BtnCriarContaUsuario)
@@ -96,15 +102,15 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(NomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(Nickusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(SenhaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(BtnCriarContaUsuario)
                 .addContainerGap(53, Short.MAX_VALUE))
@@ -129,17 +135,42 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NickusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NickusuarioActionPerformed
+    private void txtNomeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NickusuarioActionPerformed
+    }//GEN-LAST:event_txtNomeUsuarioActionPerformed
 
-    private void NomeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeUsuarioActionPerformed
+    private void txtNomeCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeCompletoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeUsuarioActionPerformed
+    }//GEN-LAST:event_txtNomeCompletoActionPerformed
 
     private void BtnCriarContaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCriarContaUsuarioActionPerformed
-        // TODO add your handling code here:
+                                                        
+    String nomeCompleto = txtNomeCompleto.getText();
+    String nomeUsuario = txtNomeUsuario.getText();
+    String senha = txtSenha.getText();
+
+    if (nomeCompleto.isEmpty() || nomeUsuario.isEmpty() || senha.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
+        return;
+    }
+
+    UsuarioDAO dao = new UsuarioDAO();
+    boolean sucesso = dao.cadastrar(nomeCompleto, nomeUsuario, senha);
+
+    if (sucesso) {
+        JOptionPane.showMessageDialog(this, "Conta criada com sucesso!");
+        this.dispose(); // fecha a tela
+        new Telalogin().setVisible(true); // abre a tela de login (se ela existir)
+    } else {
+        JOptionPane.showMessageDialog(this, "Erro ao criar conta.");
+    }
+
+
     }//GEN-LAST:event_BtnCriarContaUsuarioActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,12 +209,12 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCriarContaUsuario;
-    private javax.swing.JTextField Nickusuario;
-    private javax.swing.JTextField NomeUsuario;
-    private javax.swing.JPasswordField SenhaUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtNomeCompleto;
+    private javax.swing.JTextField txtNomeUsuario;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }
